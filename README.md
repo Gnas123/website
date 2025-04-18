@@ -6,7 +6,7 @@ composer require vlucas/phpdotenv
 
 # feature:
 HTML, CSS with responsive design and bootstrap<br>
-Login, login with google
-AJAX search for CRUD and anime tittle with Jquery
-Anime wishlist using JSON for managing
-Watching anime through youtube playlist link
+Login, login with google<br>
+AJAX search for CRUD and anime tittle with Jquery<br>
+Anime wishlist using JSON for managing<br>
+Watching anime through youtube playlist link<br>
