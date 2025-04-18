@@ -1,0 +1,337 @@
+html {
+    scroll-behavior: smooth;
+}
+html, body {
+    height: 100%; /* Ensure full-height layout */
+    margin: 0; /* Remove default margins */
+}
+
+#page-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack the child elements vertically */
+    min-height: 100vh; /* Ensure the wrapper fills the entire viewport */
+}
+
+#content {
+    flex: 1; /* Allow content to expand and fill available space */
+}
+
+.scroll-top-arrow {
+    /* display: none; */
+    bottom: 20px;
+    right: 20px;
+    top: 90%;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+
+    animation-name: appear;
+    animation-timeline: scroll(y);
+}
+/* @keyframes appear {
+    0%{
+        opacity: 0;
+        display: none;
+        position: fixed;
+    }
+
+    
+
+    100%{
+        opacity: 1;
+        display: block;
+        position: fixed;
+    }
+} */
+
+header {
+    background-color: rgb(31, 42, 56);
+}
+
+.custom-body {
+    min-height: 100vh;
+    background-color: rgb(17, 24, 38);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+    background: linear-gradient(to bottom, rgb(17, 24, 38), rgb(13, 24, 28), rgb(19, 34, 41), rgb(22, 38, 46), rgb(25, 42, 51));
+}
+
+
+nav {
+    background-color: rgb(31, 42, 56);
+    /* box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); */
+}
+.navbutton {
+    border: none;
+    outline: none;
+    background: transparent;
+    background-color: rgb(31, 42, 56);
+    color: white;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.25s;
+
+}
+.navbutton:hover {
+    background-color: rgb(40, 52, 66);
+}
+
+.custom-search-bar {
+    background-color: rgb(223, 223, 235);
+    transition: background-color 0.25s;
+    width: min(400px, 40%);
+    height: 40px;
+    margin-top: 25px;
+}
+.custom-search-bar:hover,
+.custom-search-bar:focus-within {
+    background-color: white;
+    box-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.1), /* top glow */
+        0 0 8px rgba(255, 255, 255, 0.1), /* right glow */
+        0 0 8px rgba(255, 255, 255, 0.1), /* bottom glow */
+        0 0 8px rgba(255, 255, 255, 0.1); /* left glow */
+}
+
+.custom-tim-kiem {
+    background: transparent;
+    outline: none;
+    border: none;
+    margin-left: 15px;
+}
+
+.side-bar {
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1000;
+
+    background-color: rgb(31, 42, 56);
+    color: white;
+    height: 100vh;
+    width: 250px;
+}
+.side-bar-item {
+    width: 100%;
+    margin-bottom: 10px; /* Optional: Add some space between buttons */
+    background-color: #4CAF50; /* Optional: Customize the button color */
+    color: white; /* Optional: Customize the button text color */
+    padding: 10px; /* Optional: Customize the padding */
+    border: none; /* Optional: Remove the border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    text-align: center; /* Center the text */
+    display: block; /* Ensure the button takes the full width */
+    transition: background-color 0.25s;
+}
+.side-bar-item:hover {
+    background-color: #5cc061;
+}
+.move-up-icon {
+    transition: transform 0.25s; /* Add smooth transition */
+    /* transform: translateY(-10px); */
+}
+.move-up-icon:hover {
+    transform: translateY(-4px); /* Move the icon up a bit on hover */
+}
+.btn-close {
+    filter: invert(1); /* Inverts colors, making black X white */
+  }
+  
+.btn-close:hover {
+    filter: invert(1) brightness(80%); /* Slightly dims the X on hover */
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+  
+.custom-button3 {
+    outline: none;
+    border: none;
+    padding: 20px;
+    margin: 15px;
+}
+
+.card {
+    background-color: rgb(25, 34, 53);
+    width: 100%; /* Scales with the column */
+    max-width: 16rem; /* Caps the width to prevent it from feeling too big */
+    margin: 0 auto; /* Centers the card in the flex container */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 20rem; /* Reduced from 20rem for a smaller card */
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    color: white;
+    position: relative;
+    padding: 0.75rem; /* Reduced from default 1.25rem for a tighter fit */
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .card {
+        max-width: 100%; /* Full width of column on mobile */
+    }
+    .card-img-top {
+        height: 10rem; /* Smaller image height for phones */
+    }
+    .card-body {
+        padding: 0.5rem; /* Even tighter on mobile */
+    }
+}
+
+.content {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: 0.25s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+}
+.content i {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.content:hover {
+    opacity: 1;
+}
+
+/* 
+.button-background {
+    background-color: rgb(22, 172, 109);
+    color: white;
+    border: none;
+} */
+
+
+.dropdown {
+    border: none;
+    /* background-color: red; */
+}
+.dropdown ul a {
+    /* background-color: red; */
+    display: block;
+    text-decoration: none;
+    /* padding: 8px 15px; */
+    color: white;
+}
+.dropdown .dropdown-content {
+    /* background-color: rgb(40, 52, 66); */
+    background-color: #5cc061;
+    /* position: absolute; */
+    display: none;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.8);
+    /* padding-right: 15px; */
+    /* width: 121.5px; */
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:focus .dropdown-content {
+    display: flex;
+}
+.dropdown:hover button {
+    /* background-color: rgb(40, 52, 66); */
+    background-color: #5cc061;
+
+}
+.dropdown a:hover {
+    /* background-color: rgb(5, 111, 231); */
+    /* background-color: #5cc061; */
+    background-color: #54ad58;
+
+}
+
+
+
+
+
+/* Ensure the hover content is hidden by default */
+.card .content {
+    display: none;
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Optional: semi-transparent overlay */
+}
+
+/* Show content and icon2 on hover */
+.card:hover .content {
+    display: flex;
+}
+
+.card:hover #yeuthich_icon2 {
+    display: block;
+}
+
+/* Hide icon1 when hovering */
+.card:hover #yeuthich_icon1 {
+    display: none;
+}
+
+/* Ensure icon1 is visible by default */
+#yeuthich_icon1 {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1200px) {
+    .carousel-item img {
+      max-height: 600px;
+      width: auto;
+      /* object-fit: cover; */
+      object-position: top;
+    }
+  }
+  
+@media screen and (max-width: 600px) {
+    .navbutton {
+        display: block;
+        width: 100%;
+    }
+    .custom-button3 {
+        display: flex;
+        padding: 15px;
+    }
+    body main {
+        margin: 20px;
+    }
+    body head {
+        margin: 20px;
+    }
+}
