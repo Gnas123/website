@@ -5,7 +5,7 @@ composer require google/apiclient
 composer require vlucas/phpdotenv
 
 # feature:
-HTML, CSS with responsive design and bootstrap \n
+HTML, CSS with responsive design and bootstrap \\n
 Login, login with google
 AJAX search for CRUD and anime tittle with Jquery
 Anime wishlist using JSON for managing
